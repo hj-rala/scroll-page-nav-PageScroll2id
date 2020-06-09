@@ -1,0 +1,38 @@
+<div class="mainWrap">
+  <nav id="navigation-menu">
+    <ul>
+      <li><a href="#visual"></a></li>
+      <li><a href="#event1"></a></li>
+      <li><a href="#event2"></a></li>
+      <li><a href="#event3"></a></li>
+      <li><a href="#event4"></a></li>
+      <li><a href="#checkList"></a></li>
+    </ul>
+  </nav>
+</div>
+
+
+
+
+
+
+$(function(){
+	
+	$(window).on("load",function(){
+				
+		/* Page Scroll to id fn call */
+		$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+			highlightSelector:"#navigation-menu a"
+		});
+		
+		/* demo functions */
+		$("a[rel='next']").click(function(e){
+			e.preventDefault();
+			var to=$(this).parent().parent("section").next().attr("id");
+			$.mPageScroll2id("scrollTo",to);
+		});
+		
+	});
+	
+});
+</script>
